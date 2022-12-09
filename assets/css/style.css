@@ -49,19 +49,34 @@
     scale: 1.1;
 }
 
-@media only screen and (max-width: 768px) {
-    #title h1 {
-        font-size: 50px;
-        word-wrap: break-word;
-    }
-  }
+
 
 #title p {
     color: orange;
     font-size: 24px;
 }
 
+.goTo {
+    background-color: rgb(255, 165, 0);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    transition: 0.3s ease;
+}
 
+.goTo i {
+    font-size: 35px;
+}
+
+.goTo:hover {
+    background-color: white;
+    color: orange;
+    transition: 0.3s ease;
+}
 
 h2 {
     font-size: 48px;
@@ -90,6 +105,7 @@ h2 {
 
 #aboutUsContent .row .col-12:last-child,
 #authorContent .row .col-12:last-child {
+    background-color: white !important;
     text-align: center;
     word-wrap: break-word;
     font-size: 21px;
@@ -103,6 +119,8 @@ h2 {
 
 #aboutUsContent .btn:hover {
     background-color: rgba(255, 165, 0, 0.75);
+    scale: 1.05;
+    transition: 0.3s ease-in;
 }
 
 /* jQuery plugin */
@@ -134,8 +152,8 @@ h2 {
 }
 
 .elem:hover {
-    scale: 1.1;
-    scroll-behavior: smooth;
+    scale: 1.05;
+    transition: 0.3s ease;
 }
 
 .lcl_fade_oc.lcl_pre_show #lcl_overlay,
@@ -154,14 +172,40 @@ h2 {
     text-align: center;
 }
 
-#authorContent .row .col-12:first-child {
-    background-image: url('../images/autor.jpeg');
-}
-
 #lang {
     list-style-type: none;
 }
 
 #contact {
-    width: 80%;
+    width: 100%;
+    padding: 2%;
+}
+
+#author {
+    background-color: darkgray;
+}
+
+#authorContent .row .col-12:first-child {
+    background-image: url('../images/autor.jpeg');
+}
+
+.coral {
+    background-color: rgb(251, 181, 153);
+}
+
+.coralLight {
+    background-color: rgb(251, 202, 182);
+}
+
+@media only screen and (max-width: 768px) {
+    #title h1 {
+        font-size: 50px;
+        word-wrap: break-word;
+    }
+
+    #aboutUsContent .row .col-12:first-child,
+    #authorContent .row .col-12:first-child {
+        height: 400px;
+    }
+
 }
