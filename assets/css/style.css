@@ -1,0 +1,171 @@
+@font-face {
+    font-family: robotoFlex;
+    src: url(../fonts/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: robotoFlex, serif;
+    scroll-behavior: smooth;
+}
+
+#header {
+    padding: 0 p !important;
+    background-image: url('../images/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+#header a {
+    color: white;
+    font-size: 18px;
+}
+
+#header a:first-child {
+    font-size: 24px;
+}
+
+#header a:hover {
+    color: orange;
+}
+
+#title {
+    margin-top: 15%;
+    color: white;
+    text-align: center;
+}
+
+#title h1 {
+    font-size: 74px;
+    font-weight: bold;
+}
+
+#title h1:hover {
+    scale: 1.1;
+}
+
+@media only screen and (max-width: 768px) {
+    #title h1 {
+        font-size: 50px;
+        word-wrap: break-word;
+    }
+
+    #header {
+        height: 80vh;
+    }
+  }
+
+#title p {
+    color: orange;
+    font-size: 24px;
+}
+
+
+
+h2 {
+    font-size: 48px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#aboutUsContent,
+#authorContent {
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#aboutUsContent .row .col-12:first-child,
+#authorContent .row .col-12:first-child {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#aboutUsContent .row .col-12:first-child {
+    background-image: url('../images/landscape.jpg');
+}
+
+#aboutUsContent .row .col-12:last-child,
+#authorContent .row .col-12:last-child {
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 21px;
+    padding: 4%;
+}
+
+#aboutUsContent .btn {
+    background-color: orange;
+    border-radius: 25px;
+}
+
+#aboutUsContent .btn:hover {
+    background-color: rgba(255, 165, 0, 0.75);
+}
+
+/* jQuery plugin */
+.elem,
+.elem * {
+    box-sizing: border-box;
+    margin: 0 !important;
+    border-radius: 25px;
+}
+
+.elem {
+    display: inline-block;
+    font-size: 0;
+    width: 100%;
+    border-bottom: none;
+    background: #fff;
+    padding: 10px;
+    height: auto;
+    background-clip: padding-box;
+}
+
+.elem>span {
+    display: block;
+    cursor: pointer;
+    height: 0;
+    padding-bottom: 70%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.elem:hover {
+    scale: 1.1;
+    scroll-behavior: smooth;
+}
+
+.lcl_fade_oc.lcl_pre_show #lcl_overlay,
+.lcl_fade_oc.lcl_pre_show #lcl_window,
+.lcl_fade_oc.lcl_is_closing #lcl_overlay,
+.lcl_fade_oc.lcl_is_closing #lcl_window {
+    opacity: 0 !important;
+}
+
+.lcl_fade_oc.lcl_is_closing #lcl_overlay {
+    -webkit-transition-delay: .15s !important;
+    transition-delay: .15s !important;
+}
+
+#destination {
+    text-align: center;
+}
+
+#authorContent .row .col-12:first-child {
+    background-image: url('../images/autor.jpeg');
+}
+
+#lang {
+    list-style-type: none;
+}
+
+#contact {
+    width: 80%;
+}
