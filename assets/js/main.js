@@ -14,12 +14,31 @@ window.onload = function () {
     authorLangsWrite();
     scrollNav();
     formWrite();
+
+    $(document).on("click", "#register", () => formValidation());
+
+    let i = 0;
+
+    setInterval(() => {
+        
+        i++;
+        i = i > 2 ? 0 : i;
+
+        let slides = document.querySelectorAll('.slide');
+
+        slides.forEach(slide => {
+            console.log(slide.style.transform)
+            slide.style.transform = `translateX(-${i*100}%)`;
+        });
+        
+
+    }, 3500);
 }
 
 //Dinamicki ispis navigacije
 function menuWrite() {
     let ispis = "";
-    let arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Kontakt", "Autor"];
+    let arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
     let arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
 
     let navigation = document.querySelector("#navigation");
@@ -74,96 +93,175 @@ function authorLangsWrite() {
     langs.innerHTML = ispis;
 }
 
+//Dinamicki ispis forme
+var form = document.querySelector("#registration");
 function formWrite() {
-    // Create a form dynamically
-    var form = document.querySelector("#registration")
-    form.setAttribute("method", "post");
-    form.setAttribute("action", "submit.php");
 
-    // Create an input element for first Name
-    var fnInp = document.createElement("input");
-    var fnLbl = document.createElement("Label");
-    fnLbl.setAttribute("for", "firstName");
-    fnLbl.classList.add("form-label");
-    var fnTn = document.createTextNode("Ime");
+    let ispis = "";
+
+    var arrayAttr = ["firstName", "lastName", "email", "phNumber", "ppl", "room", "day"];
+    var arrayCol = [6, 6, 6, 6, 2, 2, 2];
+    var arrayLblN = ["Ime", "Prezime", "Email", "Broj Telefona", "Broj osoba", "Broj soba", "Broj dana"];
+    var arrayType = ["text", "text", "text", "tel", "number", "number", "number"];
+    var arrayPlaceholder = ["Ilija, Ana Marija", "Popović, Milinković Savić", "ilija.popovic01@gmail.com", "+381607871265"];
+
+    var form = document.querySelector("#registration");
+    form.setAttribute("method", "");
+
+    for (let i = 0; i < arrayAttr.length; i++) {
+
+        ispis += `<div class="form-group col-md-${arrayCol[i]}">
+                    <label for="${arrayAttr[i]}" class="form-label ps-2">${arrayLblN[i]}</label>
+                    <input type="${arrayType[i]}" `
+
+        if (i > 2) {
+            ispis += `min="1"`
+        }
+
+        ispis += ` class="form-control" name="${arrayAttr[i]}" id="${arrayAttr[i]}"`;
+
+        if (i < 4) {
+            ispis += `placeholder="${arrayPlaceholder[i]}"`;
+        }
+
+        ispis += `/><p class="errorText"><p></div>`;
+    }
+
+    form.innerHTML = ispis;
+    ispis = "";
+
+    var div = document.createElement("div");
+    var fnLbl = document.createElement("label");
+
+    div.classList.add("col-md-6", "form-group");
+    fnLbl.setAttribute("for", "location");
+    fnLbl.classList.add("form-label", "ps-2");
+    var fnTn = document.createTextNode("Lokacija za odmor");
     fnLbl.appendChild(fnTn);
-    fnInp.setAttribute("type", "text");
-    fnInp.setAttribute("name", "firstName");
-    fnInp.setAttribute("placeholder", "Ime");
-    fnLbl.classList.add("form-label");
 
-    form.appendChild(fnLbl);
-    form.appendChild(fnInp);
+    ispis += `<select id="location" name="location" class="form-select">
+        <option value="0"> Izaberite...</option>`;
+    for (let i = 0; i < arrayImageTitle.length; i++) {
+        ispis += `<option value="${[i + 1]}">${arrayImageTitle[i]}</option>`
+    }
 
-    console.log("asd")
+    ispis += `</select><p class="errorText"><p>`;
 
+    form.appendChild(div);
+    div.appendChild(fnLbl);
+    div.innerHTML += ispis;
 
-    // // Create an input element for last Name
-    // var lnInp = document.createElement("input");
-    // FN.setAttribute("type", "text");
-    // FN.setAttribute("name", "lastName");
-    // FN.setAttribute("placeholder", "Prezime");
+    ispis = "";
 
-    // // Create an input element for date of birth
-    // var DOB = document.createElement("input");
-    // DOB.setAttribute("type", "text");
-    // DOB.setAttribute("name", "dob");
-    // DOB.setAttribute("placeholder", "DOB");
+    var div1 = document.createElement("div");
+    div1.classList.add("col-md-12", "form-group");
+    var btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("id", "register");
+    btn.classList.add("btn", "btn-primary");
+    var btnTn = document.createTextNode("Potvrdi");
+    btn.appendChild(btnTn);
+    var tagP = document.createElement("p");
+    tagP.className = "errorText";
 
-    // // Create an input element for emailID
-    // var EID = document.createElement("input");
-    // EID.setAttribute("type", "text");
-    // EID.setAttribute("name", "emailID");
-    // EID.setAttribute("placeholder", "E-Mail ID");
-
-    // // Create an input element for password
-    // var PWD = document.createElement("input");
-    // PWD.setAttribute("type", "password");
-    // PWD.setAttribute("name", "password");
-    // PWD.setAttribute("placeholder", "Password");
-
-    // // Create an input element for retype-password
-    // var RPWD = document.createElement("input");
-    // RPWD.setAttribute("type", "password");
-    // RPWD.setAttribute("name", "reTypePassword");
-    // RPWD.setAttribute("placeholder", "ReEnter Password");
-
-    // // create a submit button
-    // var s = document.createElement("input");
-    // s.setAttribute("type", "submit");
-    // s.setAttribute("value", "Submit");
-
-    // // Append the full name input to the form
-    // form.appendChild(FN);
-
-    // // Inserting a line break
-    // form.appendChild(br.cloneNode());
-
-    // // Append the DOB to the form
-    // form.appendChild(DOB);
-    // form.appendChild(br.cloneNode());
-
-    // // Append the emailID to the form
-    // form.appendChild(EID);
-    // form.appendChild(br.cloneNode());
-
-    // // Append the Password to the form
-    // form.appendChild(PWD);
-    // form.appendChild(br.cloneNode());
-
-    // // Append the ReEnterPassword to the form
-    // form.appendChild(RPWD);
-    // form.appendChild(br.cloneNode());
-
-    // // Append the submit button to the form
-    // form.appendChild(s);
-
-    // document.getElementsByTagName("body")[0]
-    //     .appendChild(form);
+    form.appendChild(div1);
+    div1.appendChild(btn);
+    div1.appendChild(tagP)
 }
 
 function formValidation() {
+    let objFirstName, objLastName, objEmail, objPhNumber, objPpl, objRoom, objDay, objLocation;
+    let error = false;
 
+    objFirstName = document.querySelector("#firstName");
+    objLastName = document.querySelector("#lastName");
+    objEmail = document.querySelector("#email");
+    objPhNumber = document.querySelector("#phNumber");
+    objPpl = document.querySelector("#ppl");
+    objRoom = document.querySelector("#room");
+    objDay = document.querySelector("#day");
+    objLocation = document.querySelector("#location");
+    let location = objLocation.options[objLocation.selectedIndex].value;
+
+    let regImePrezime = /^[A-ZŠĐČĆŽ][a-zšđčćž]{2,14}(\s[A-ZŠĐČĆŽ][a-zšđčćž]{2,14})*$/;
+    let regEmail = /^[a-z|A-Z][a-z|A-Z+.|0-9]{2,40}[a-z|A-Z|0-9][@]([a-z]{3,12}[.])*[a-z]{2,4}$/;
+    let regPhNumber = /^(\+381|[0])6[0-79][\d]{6,7}$/;
+
+    if (!regImePrezime.test(objFirstName.value)) {
+        objFirstName.classList.add("border", "border-3", "border-danger");
+        objFirstName.nextElementSibling.innerHTML = "Ime mora početi velikim slovom i mora imati barem tri karaktera!"
+        error = true;
+    } else {
+        objFirstName.classList.remove("border-danger");
+        objFirstName.nextElementSibling.innerHTML = "";
+    }
+
+    if (!regImePrezime.test(objLastName.value)) {
+        objLastName.classList.add("border", "border-3", "border-danger");
+        objLastName.nextElementSibling.innerHTML = "Prezime mora početi velikim slovom i mora imati barem tri karaktera!";
+        error = true;
+    } else {
+        objLastName.classList.remove("border-danger");
+        objLastName.nextElementSibling.innerHTML = "";
+    }
+
+    if (!regEmail.test(objEmail.value)) {
+        objEmail.classList.add("border", "border-3", "border-danger");
+        objEmail.nextElementSibling.innerHTML = "Email mora biti u formatu primer@mail.domain, u delu 'primer' moze imati slova, brojeve i tačku!";
+        error = true;
+    } else {
+        objEmail.classList.remove("border-danger");
+        objEmail.nextElementSibling.innerHTML = "";
+    }
+
+    if (!regPhNumber.test(objPhNumber.value)) {
+        objPhNumber.classList.add("border", "border-3", "border-danger");
+        objPhNumber.nextElementSibling.innerHTML = "Broj telefona mora biti u formatu +381607871265!";
+        error = true;
+    } else {
+        objPhNumber.classList.remove("border-danger");
+        objPhNumber.nextElementSibling.innerHTML = "";
+    }
+
+    if (!objPpl.value) {
+        objPpl.classList.add("border", "border-3", "border-danger");
+        objPpl.nextElementSibling.innerHTML = "Polje broj osoba je obavezno!";
+        error = true;
+    } else {
+        objPpl.classList.remove("border-danger");
+        objPpl.nextElementSibling.innerHTML = "";
+    }
+
+    if (!objRoom.value) {
+        objRoom.classList.add("border", "border-3", "border-danger");
+        objRoom.nextElementSibling.innerHTML = "Polje broj soba je obavezno!";
+        error = true;
+    } else {
+        objRoom.classList.remove("border-danger");
+        objRoom.nextElementSibling.innerHTML = "";
+    }
+
+    if (!objDay.value) {
+        objDay.classList.add("border", "border-3", "border-danger");
+        objDay.nextElementSibling.innerHTML = "Polje broj dana je obavezno!";
+        error = true;
+    } else {
+        objDay.classList.remove("border-danger");
+        objDay.nextElementSibling.innerHTML = "";
+    }
+
+    if (location == "0") {
+        objLocation.classList.add("border", "border-3", "border-danger");
+        objLocation.nextElementSibling.innerHTML = "Polje za odabir lokacije je obavizno!";
+        error = true;
+    } else {
+        objLocation.classList.remove("border-danger");
+        objLocation.nextElementSibling.innerHTML = "";
+    }
+
+    if (!error) {
+        form.reset();
+    }
 }
 
 window.onscroll = function () { scrollNav() };
@@ -181,4 +279,13 @@ function scrollNav() {
         header.style.backgroundColor = "";
         header.style.transtition = "0.3s";
     }
+}
+
+function slider() {
+    var arraySliderClass = ["../assets/images/slide1.jpg", "../assets/slide2.jpg", "../assets/images/slider3.jpg"];
+    for (let i = 0; i < arraySliderClass.length; i++) {
+        
+    }
+
+
 }

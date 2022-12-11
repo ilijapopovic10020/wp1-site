@@ -11,19 +11,66 @@
     scroll-behavior: smooth;
 }
 
-#header {
-    padding: 0 p !important;
-    background-image: url('../images/1.jpg');
+#slider {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-image: url('../images/slider1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+#sliderInside {
+    position: relative;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    width: 300vw;
+}
+
+.slide {
     height: 100vh;
-    font-size: 16px;
+    width: 100vw;
+    transition: .5s ease;
+    transform: translateX(0%);
+}
+
+#first {
+    background-image: url('../images/slider1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#second {
+    background-image: url('../images/goc.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#third {
+    background-image: url('../images/golija.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#header {
+    padding: 0px !important;
+    /* background-image: url('../images/slider1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    height: 100vh;
 }
 
 #header a {
     color: white;
-    font-size: 18px;
+    font-size: 1px;
 }
 
 #header a:first-child {
@@ -66,6 +113,7 @@
     align-items: center;
     transition: 0.3s ease;
     margin-top: 350px;
+    text-decoration: none;
 }
 
 .goTo i {
@@ -202,6 +250,10 @@ footer {
     background-color: rgb(251, 202, 182);
 }
 
+.errorText {
+    font-weight: lighter;
+}
+
 @media only screen and (max-width: 768px) {
     #title h1 {
         font-size: 50px;
@@ -212,5 +264,4 @@ footer {
     #authorContent .row .col-12:first-child {
         height: 400px;
     }
-
 }
