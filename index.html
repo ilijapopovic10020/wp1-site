@@ -15,7 +15,7 @@
 <body>
     <!-- Sekcija zaglavlje -->
     <div class="container-fluid" id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark p-2 fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand logo" href="index.html">Omnia Turizam</a>
                 <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
@@ -45,6 +45,7 @@
 
     <!-- Sekcija O nama -->
     <h2 class="container-fluid mt-5" id="aboutUs">Zašto baš Omnia Turizam?</h2>
+    <br />
     <div class="container mt-3" id="aboutUsContent">
         <div class="row">
             <div class="col-12 col-md-6"></div>
@@ -77,9 +78,9 @@
     <div class="container-fluid mt-5 coralLight" id="contact">
         <h2>Rezervišite svoje mesto odmah</h2>
         <div class="container mt-3">
-            <div class="row">
-                <form class="row g-3">
-                    <div class="col-md-6">
+            <div class="row" id="formFeild">
+                 <form class="row g-3" id="registration">
+                   <!-- <div class="col-md-6">
                         <label for="firstName" class="form-label">Ime</label>
                         <input type="text" class="form-control" name="firstName" id="firstName"
                             placeholder="Ilija,  Ana Marija" />
@@ -125,14 +126,13 @@
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                </form>
+                    </div>-->
+                </form> 
             </div>
         </div>
     </div>
 
     <!-- Sekcija Author -->
-
     <div class="container-fluid pb-4" id="author">
         <h2 class="pt-5">O autoru</h2>
         <div class="container mt-3" id="authorContent">
@@ -232,8 +232,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
+        <script src="lib/jquery.js"></script>
     <script src="https://kit.fontawesome.com/25d233a38a.js" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
