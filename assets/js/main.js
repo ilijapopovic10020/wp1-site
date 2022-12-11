@@ -58,7 +58,7 @@ var arrayImageTitle = ["Zlatibor", "Tara", "Stara Planina", "Šar Planina", "Gol
 function galleryWrite() {
     let ispis = "";
     let arrayImages = ["landscape.jpg", "tara.jpg", "staraplanina.jpg", "sarplanina.jpg", "golija.jpg", "goc.jpg"];
-    let arrayImageDescription = ["Zlatibor zaleđeno jezero", "Tara koliba samoće", "Stara planina koliba za dvoje", "Šar planina apartmani", "Golija apartmani", "Goč most ljubavi"];
+    let arrayImageDescription = ["Zlatibor zaleđeno jezero", "Tara pejzaž", "Stara planina apartmani", "Šar planina najviši vrh - Titov vrh", "Golija apartmani", "Goč jezero Selište"];
     let arrayImageAuthor = ["Petar Dašić", "Ivana Jovanović", "Dejan Stević", "Jovana Mandić", "Dušan Marić", "Gojko Milićević"];
 
     let destination = document.querySelector("#destinationImages")

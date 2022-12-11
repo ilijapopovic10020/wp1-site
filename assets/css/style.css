@@ -46,14 +46,14 @@
 }
 
 #second {
-    background-image: url('../images/goc.jpg');
+    background-image: url('../images/slider2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #third {
-    background-image: url('../images/golija.jpg');
+    background-image: url('../images/slider3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -61,10 +61,6 @@
 
 #header {
     padding: 0px !important;
-    /* background-image: url('../images/slider1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     height: 100vh;
 }
 
