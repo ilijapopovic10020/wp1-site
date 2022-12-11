@@ -75,7 +75,7 @@
 .goTo:hover {
     background-color: white;
     color: orange;
-    transition: 0.3s ease;
+    scale: 1.1;
 }
 
 h2 {
@@ -182,15 +182,20 @@ h2 {
 }
 
 #author {
-    background-color: darkgray;
+    background-color: rgb(225, 225, 225);
 }
 
 #authorContent .row .col-12:first-child {
     background-image: url('../images/autor.jpeg');
 }
 
+footer {
+    color: #fff;
+}
+
 .coral {
     background-color: rgb(251, 181, 153);
+    color: #fff;
 }
 
 .coralLight {

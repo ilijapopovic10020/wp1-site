@@ -1,9 +1,4 @@
 window.onload = function () {
-
-    var ispis = "";
-
-    //jQuery plugin Galerija
-
     lc_lightbox('.elem', {
         wrap_class: 'lcl_fade_oc',
         gallery: true,
@@ -14,15 +9,38 @@ window.onload = function () {
         padding: 0,
         border_w: 0,
     });
+    galleryWrite();
+    menuWrite();
+    authorLangsWrite();
+}
 
-    //Dimanicko ispisivanje slika za galeriju
+//Dinamicki ispis navigacije
+function menuWrite() {
+    let ispis = "";
+    let arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Kontakt", "Autor"];
+    let arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
 
-    var arrayImages = ["landscape.jpg", "tara.jpg", "staraplanina.jpg", "sarplanina.jpg", "golija.jpg", "goc.jpg"];
-    var arrayImageTitle = ["Zlatibor", "Tara", "Stara Planina", "Šar Planina", "Golija", "Goč"];
-    var arrayImageDescription = ["Zlatibor zaleđeno jezero", "Tara koliba samoće", "Stara planina koliba za dvoje", "Šar planina apartmani", "Golija apartmani", "Goč most ljubavi"];
-    var arrayImageAuthor = ["Petar Dašić", "Ivana Jovanović", "Dejan Stević", "Jovana Mandić", "Dušan Marić", "Gojko Milićević"];
+    let navigation = document.querySelector("#navigation");
 
-    var destination = document.querySelector("#destinationImages")
+    for (let i = 0; i < arrayLinkNames.length; i++) {
+        ispis += `<li class="nav-item">
+                    <a class="nav-link" href="${arrayLinks[i]}">${arrayLinkNames[i]}</a>
+                </li>`
+    }
+    navigation.innerHTML = ispis;
+}
+
+
+var arrayImageTitle = ["Zlatibor", "Tara", "Stara Planina", "Šar Planina", "Golija", "Goč"];
+
+//Dimanicko ispisivanje slika za galeriju
+function galleryWrite() {
+    let ispis = "";
+    let arrayImages = ["landscape.jpg", "tara.jpg", "staraplanina.jpg", "sarplanina.jpg", "golija.jpg", "goc.jpg"];
+    let arrayImageDescription = ["Zlatibor zaleđeno jezero", "Tara koliba samoće", "Stara planina koliba za dvoje", "Šar planina apartmani", "Golija apartmani", "Goč most ljubavi"];
+    let arrayImageAuthor = ["Petar Dašić", "Ivana Jovanović", "Dejan Stević", "Jovana Mandić", "Dušan Marić", "Gojko Milićević"];
+
+    let destination = document.querySelector("#destinationImages")
 
     for (let i = 0; i < arrayImages.length; i++) {
         ispis += `
@@ -39,26 +57,11 @@ window.onload = function () {
     }
 
     destination.innerHTML = ispis;
+}
 
-    ispis = "";
-    //Dinamicki ispis navigacije
-
-    var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Kontakt", "Autor"];
-    var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
-
-    var navigation = document.querySelector("#navigation");
-
-    for (let i = 0; i < arrayLinkNames.length; i++) {
-        ispis += `<li class="nav-item">
-                    <a class="nav-link" href="${arrayLinks[i]}">${arrayLinkNames[i]}</a>
-                </li>`
-    }
-    navigation.innerHTML = ispis;
-
-    ispis = "";
-
-    //Dinamicki ispis za autora
-
+//Dinamicki ispis za autora
+function authorLangsWrite() {
+    let ispis = "";
     var arrayLangs = ["C#", "C/C++", "HTML", "CSS", "JavaScript", "Java"];
     var langs = document.querySelector("#lang");
 
@@ -67,4 +70,12 @@ window.onload = function () {
     }
 
     langs.innerHTML = ispis;
+}
+
+function formWrite() {
+    
+}
+
+function formValidation() {
+
 }
