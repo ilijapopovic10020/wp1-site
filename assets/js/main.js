@@ -264,6 +264,7 @@ function formValidation() {
     }
 }
 
+//Promena boje prilikom skolovanja navigacionog menia
 window.onscroll = function () { scrollNav() };
 
 var header = document.querySelector("nav");
@@ -281,11 +282,9 @@ function scrollNav() {
     }
 }
 
-function slider() {
-    var arraySliderClass = ["../assets/images/slide1.jpg", "../assets/slide2.jpg", "../assets/images/slider3.jpg"];
-    for (let i = 0; i < arraySliderClass.length; i++) {
-        
-    }
+// function slider() {
+//     let currentSlide = document.querySelector("#sliderInside .active");
+//     let nextSlide = (currentSlide.nextElementSibling) ? currentSlide.nextElementSibling : currentSlide.parentElement.firstElementChild
 
 
-}
+// }
