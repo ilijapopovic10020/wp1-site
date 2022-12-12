@@ -14,32 +14,32 @@ window.onload = function () {
     authorLangsWrite();
     scrollNav();
     formWrite();
+    usefullLinks();
 
     $(document).on("click", "#register", () => formValidation());
 
     let i = 0;
 
     setInterval(() => {
-        
+
         i++;
         i = i > 2 ? 0 : i;
 
         let slides = document.querySelectorAll('.slide');
 
         slides.forEach(slide => {
-            console.log(slide.style.transform)
-            slide.style.transform = `translateX(-${i*100}%)`;
+            slide.style.transform = `translateX(-${i * 100}%)`;
         });
-        
 
     }, 3500);
 }
+var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
+var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
+
 
 //Dinamicki ispis navigacije
 function menuWrite() {
     let ispis = "";
-    let arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
-    let arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
 
     let navigation = document.querySelector("#navigation");
 
@@ -281,10 +281,3 @@ function scrollNav() {
         header.style.transtition = "0.3s";
     }
 }
-
-// function slider() {
-//     let currentSlide = document.querySelector("#sliderInside .active");
-//     let nextSlide = (currentSlide.nextElementSibling) ? currentSlide.nextElementSibling : currentSlide.parentElement.firstElementChild
-
-
-// }
