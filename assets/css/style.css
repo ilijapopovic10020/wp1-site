@@ -174,6 +174,7 @@
         box-sizing: border-box;
         margin: 0 !important;
         border-radius: 25px;
+        overflow: hidden;
     }
 
     .elem {
@@ -211,6 +212,13 @@
     .lcl_fade_oc.lcl_is_closing #lcl_overlay {
         -webkit-transition-delay: .15s !important;
         transition-delay: .15s !important;
+    }
+
+    #imageTitle {
+        border-radius: 25px;
+        width: 33%;
+        margin: 0 auto;
+        margin-bottom: 7px;
     }
 
     #destination {

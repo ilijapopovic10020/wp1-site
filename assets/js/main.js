@@ -33,9 +33,9 @@ window.onload = function () {
 
     }, 3500);
 }
+
 var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
 var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
-
 
 //Dinamicki ispis navigacije
 function menuWrite() {
@@ -58,7 +58,7 @@ var arrayImageTitle = ["Zlatibor", "Tara", "Stara Planina", "Šar Planina", "Gol
 function galleryWrite() {
     let ispis = "";
     let arrayImages = ["landscape.jpg", "tara.jpg", "staraplanina.jpg", "sarplanina.jpg", "golija.jpg", "goc.jpg"];
-    let arrayImageDescription = ["Zlatibor zaleđeno jezero", "Tara pejzaž", "Stara planina apartmani", "Šar planina najviši vrh - Titov vrh", "Golija apartmani", "Goč jezero Selište"];
+    let arrayImageDescription = ["25&#8364; noć", "15&#8364; noć", "13&#8364; noć", "10&#8364; noć", "16&#8364; noć", "12&#8364; noć"];
     let arrayImageAuthor = ["Petar Dašić", "Ivana Jovanović", "Dejan Stević", "Jovana Mandić", "Dušan Marić", "Gojko Milićević"];
 
     let destination = document.querySelector("#destinationImages")
@@ -69,11 +69,12 @@ function galleryWrite() {
             <a class="elem"
                 href="assets/images/${arrayImages[i]}"
                 title="${arrayImageTitle[i]}"
-                data-lcl-txt="${arrayImageDescription[i]}"
+                data-lcl-txt="Top ponuda ${arrayImageDescription[i]}"
                 data-lcl-author="${arrayImageAuthor[i]}"
                 data-lcl-thumb="assets/images/${arrayImages[i]}">
                 <span style="background-image: url(assets/images/${arrayImages[i]});"></span>
             </a>
+            <p id="imageTitle" class="coralLight">${arrayImageTitle[i]}</p>
         </div>`
     }
 
@@ -101,7 +102,7 @@ function formWrite() {
 
     var arrayAttr = ["firstName", "lastName", "email", "phNumber", "ppl", "room", "day"];
     var arrayCol = [6, 6, 6, 6, 2, 2, 2];
-    var arrayLblN = ["Ime", "Prezime", "Email", "Broj Telefona", "Broj osoba", "Broj soba", "Broj dana"];
+    var arrayLblN = ["Ime", "Prezime", "Email", "Broj Telefona", "Broj osoba", "Broj soba", "Broj noćenja"];
     var arrayType = ["text", "text", "text", "tel", "number", "number", "number"];
     var arrayPlaceholder = ["Ilija, Ana Marija", "Popović, Milinković Savić", "ilija.popovic01@gmail.com", "+381607871265"];
 
