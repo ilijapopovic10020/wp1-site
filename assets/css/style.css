@@ -1,264 +1,264 @@
-@font-face {
-    font-family: robotoFlex;
-    src: url(../fonts/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf);
-}
+    @font-face {
+        font-family: robotoFlex;
+        src: url(../fonts/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf);
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: robotoFlex, serif;
-    scroll-behavior: smooth;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: robotoFlex, serif;
+        scroll-behavior: smooth;
+    }
 
-#slider {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-    background-image: url('../images/slider1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
-}
+    #slider {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background-image: url('../images/slider1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow-x: hidden;
+    }
 
-#sliderInside {
-    position: relative;
-    height: inherit;
-    width: inherit;
-    display: flex;
-    flex-direction: row;
-    width: 300vw;
-}
+    #sliderInside {
+        position: relative;
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-direction: row;
+        width: 300vw;
+    }
 
-.slide {
-    height: 100vh;
-    width: 100%;
-    transition: .5s ease;
-    transform: translateX(0%);
-}
+    .slide {
+        height: 100vh;
+        width: 100%;
+        transition: .5s ease;
+        transform: translateX(0%);
+    }
 
-#first {
-    background-image: url('../images/slider1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    #first {
+        background-image: url('../images/slider1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-#second {
-    background-image: url('../images/slider2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    #second {
+        background-image: url('../images/slider2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-#third {
-    background-image: url('../images/slider3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    #third {
+        background-image: url('../images/slider3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-#header {
-    padding: 0px !important;
-    height: 100vh;
-}
+    #header {
+        padding: 0px !important;
+        height: 100vh;
+    }
 
-#header a {
-    color: white;
-    font-size: 1px;
-}
+    #header a {
+        color: white;
+        font-size: 1px;
+    }
 
-#header a:first-child {
-    font-size: 24px;
-}
+    #header a:first-child {
+        font-size: 24px;
+    }
 
-#header a:hover {
-    color: orange;
-}
+    #header a:hover {
+        color: orange;
+    }
 
-#title {
-    color: white;
-    text-align: center;
-    position: relative;
-    top: 25%;
-}
+    #title {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 25%;
+    }
 
-#title h1 {
-    font-size: 74px;
-    font-weight: bold;
-}
-
-#title h1:hover {
-    scale: 1.1;
-}
-
-#title p {
-    color: orange;
-    font-size: 24px;
-}
-
-.goTo {
-    background-color: rgb(255, 165, 0);
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    align-items: center;
-    transition: 0.3s ease;
-    margin-top: 350px;
-    text-decoration: none;
-}
-
-.goTo i {
-    font-size: 35px;
-}
-
-.goTo:hover {
-    background-color: white;
-    color: orange;
-    scale: 1.1;
-}
-
-h2 {
-    font-size: 48px;
-    text-align: center;
-    font-weight: bold;
-}
-
-#aboutUsContent,
-#authorContent {
-    margin-top: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-#aboutUsContent .row .col-12:first-child,
-#authorContent .row .col-12:first-child {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#aboutUsContent .row .col-12:first-child {
-    background-image: url('../images/landscape.jpg');
-}
-
-#aboutUsContent .row .col-12:last-child,
-#authorContent .row .col-12:last-child {
-    background-color: white !important;
-    text-align: center;
-    word-wrap: break-word;
-    font-size: 21px;
-    padding: 4%;
-}
-
-#aboutUsContent .btn {
-    background-color: orange;
-    border-radius: 25px;
-}
-
-#aboutUsContent .btn:hover {
-    background-color: rgba(255, 165, 0, 0.75);
-    scale: 1.05;
-    transition: 0.3s ease-in;
-}
-
-/* jQuery plugin */
-.elem,
-.elem * {
-    box-sizing: border-box;
-    margin: 0 !important;
-    border-radius: 25px;
-}
-
-.elem {
-    display: inline-block;
-    font-size: 0;
-    width: 100%;
-    border-bottom: none;
-    background: #fff;
-    padding: 10px;
-    height: auto;
-    background-clip: padding-box;
-}
-
-.elem>span {
-    display: block;
-    cursor: pointer;
-    height: 0;
-    padding-bottom: 70%;
-    background-size: cover;
-    background-position: center center;
-}
-
-.elem:hover {
-    scale: 1.05;
-    transition: 0.3s ease;
-}
-
-.lcl_fade_oc.lcl_pre_show #lcl_overlay,
-.lcl_fade_oc.lcl_pre_show #lcl_window,
-.lcl_fade_oc.lcl_is_closing #lcl_overlay,
-.lcl_fade_oc.lcl_is_closing #lcl_window {
-    opacity: 0 !important;
-}
-
-.lcl_fade_oc.lcl_is_closing #lcl_overlay {
-    -webkit-transition-delay: .15s !important;
-    transition-delay: .15s !important;
-}
-
-#destination {
-    text-align: center;
-}
-
-#lang {
-    list-style-type: none;
-}
-
-#contact {
-    width: 100%;
-    padding: 2%;
-}
-
-#author {
-    background-color: rgb(225, 225, 225);
-}
-
-#authorContent .row .col-12:first-child {
-    background-image: url('../images/autor.jpeg');
-}
-
-footer {
-    color: #fff;
-}
-
-.coral {
-    background-color: rgb(251, 181, 153);
-    color: #fff;
-}
-
-.coralLight {
-    background-color: rgb(251, 202, 182);
-}
-
-.errorText {
-    font-weight: lighter;
-}
-
-@media only screen and (max-width: 768px) {
     #title h1 {
-        font-size: 50px;
-        word-wrap: break-word;
+        font-size: 74px;
+        font-weight: bold;
+    }
+
+    #title h1:hover {
+        scale: 1.1;
+    }
+
+    #title p {
+        color: orange;
+        font-size: 24px;
+    }
+
+    .goTo {
+        background-color: rgb(255, 165, 0);
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        transition: 0.3s ease;
+        margin-top: 350px;
+        text-decoration: none;
+    }
+
+    .goTo i {
+        font-size: 35px;
+    }
+
+    .goTo:hover {
+        background-color: white;
+        color: orange;
+        scale: 1.1;
+    }
+
+    h2 {
+        font-size: 48px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #aboutUsContent,
+    #authorContent {
+        margin-top: 2%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 25px;
+        overflow: hidden;
     }
 
     #aboutUsContent .row .col-12:first-child,
     #authorContent .row .col-12:first-child {
-        height: 400px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-}
+
+    #aboutUsContent .row .col-12:first-child {
+        background-image: url('../images/landscape.jpg');
+    }
+
+    #aboutUsContent .row .col-12:last-child,
+    #authorContent .row .col-12:last-child {
+        background-color: white !important;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 21px;
+        padding: 4%;
+    }
+
+    #aboutUsContent .btn {
+        background-color: orange;
+        border-radius: 25px;
+    }
+
+    #aboutUsContent .btn:hover {
+        background-color: rgba(255, 165, 0, 0.75);
+        scale: 1.05;
+        transition: 0.3s ease-in;
+    }
+
+    /* jQuery plugin */
+    .elem,
+    .elem * {
+        box-sizing: border-box;
+        margin: 0 !important;
+        border-radius: 25px;
+    }
+
+    .elem {
+        display: inline-block;
+        font-size: 0;
+        width: 100%;
+        border-bottom: none;
+        background: #fff;
+        padding: 10px;
+        height: auto;
+        background-clip: padding-box;
+    }
+
+    .elem>span {
+        display: block;
+        cursor: pointer;
+        height: 0;
+        padding-bottom: 70%;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .elem:hover {
+        scale: 1.05;
+        transition: 0.3s ease;
+    }
+
+    .lcl_fade_oc.lcl_pre_show #lcl_overlay,
+    .lcl_fade_oc.lcl_pre_show #lcl_window,
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay,
+    .lcl_fade_oc.lcl_is_closing #lcl_window {
+        opacity: 0 !important;
+    }
+
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay {
+        -webkit-transition-delay: .15s !important;
+        transition-delay: .15s !important;
+    }
+
+    #destination {
+        text-align: center;
+    }
+
+    #lang {
+        list-style-type: none;
+    }
+
+    #contact {
+        width: 100%;
+        padding: 2%;
+    }
+
+    #author {
+        background-color: rgb(225, 225, 225);
+    }
+
+    #authorContent .row .col-12:first-child {
+        background-image: url('../images/autor.jpeg');
+    }
+
+    footer {
+        color: #fff;
+    }
+
+    .coral {
+        background-color: rgb(251, 181, 153);
+        color: #fff;
+    }
+
+    .coralLight {
+        background-color: rgb(251, 202, 182);
+    }
+
+    .errorText {
+        font-weight: lighter;
+    }
+
+    @media only screen and (max-width: 768px) {
+        #title h1 {
+            font-size: 50px;
+            word-wrap: break-word;
+        }
+
+        #aboutUsContent .row .col-12:first-child,
+        #authorContent .row .col-12:first-child {
+            height: 400px;
+        }
+    }
