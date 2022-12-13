@@ -165,7 +165,7 @@ function formWrite() {
 
     form.appendChild(div1);
     div1.appendChild(btn);
-    div1.appendChild(tagP)
+    div1.appendChild(tagP);    
 }
 
 function formValidation() {
@@ -234,6 +234,15 @@ function formValidation() {
     if (!objRoom.value) {
         objRoom.classList.add("border", "border-3", "border-danger");
         objRoom.nextElementSibling.innerHTML = "Polje broj soba je obavezno!";
+        error = true;
+    } else {
+        objRoom.classList.remove("border-danger");
+        objRoom.nextElementSibling.innerHTML = "";
+    }
+
+    if (objPpl.value < objRoom.value) {
+        objRoom.classList.add("border", "border-3", "border-danger");
+        objRoom.nextElementSibling.innerHTML = `Maksimalan broj soba za ${objPpl.value} osoba/e je ${objPpl.value}`;
         error = true;
     } else {
         objRoom.classList.remove("border-danger");
