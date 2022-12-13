@@ -14,7 +14,6 @@ window.onload = function () {
     authorLangsWrite();
     scrollNav();
     formWrite();
-    usefullLinks();
 
     $(document).on("click", "#register", () => formValidation());
 
@@ -70,7 +69,7 @@ function galleryWrite() {
                 href="assets/images/${arrayImages[i]}"
                 title="${arrayImageTitle[i]}"
                 data-lcl-txt="Top ponuda ${arrayImageDescription[i]}"
-                data-lcl-author="${arrayImageAuthor[i]}"
+                data-lcl-author="Vlasnik Apratmana: ${arrayImageAuthor[i]}"
                 data-lcl-thumb="assets/images/${arrayImages[i]}">
                 <span style="background-image: url(assets/images/${arrayImages[i]});"></span>
             </a>
