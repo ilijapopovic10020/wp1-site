@@ -11,6 +11,26 @@
         scroll-behavior: smooth;
     }
 
+    h2 {
+        font-size: 48px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .coral {
+        background-color: rgb(251, 181, 153);
+        color: #fff;
+    }
+
+    .coralLight {
+        background-color: rgb(251, 202, 182);
+    }
+
+    .errorText {
+        font-weight: lighter;
+    }
+
+    /* Slajder */
     #slider {
         position: absolute;
         height: 100vh;
@@ -60,6 +80,7 @@
         background-position: center;
     }
 
+    /* Zaglavlje */
     #header {
         padding: 0px !important;
         height: 100vh;
@@ -78,6 +99,7 @@
         color: orange;
     }
 
+    /* Naslov */
     #title {
         color: white;
         text-align: center;
@@ -99,6 +121,7 @@
         font-size: 24px;
     }
 
+    /* Button  */
     .goTo {
         background-color: rgb(255, 165, 0);
         width: 80px;
@@ -123,12 +146,7 @@
         scale: 1.1;
     }
 
-    h2 {
-        font-size: 48px;
-        text-align: center;
-        font-weight: bold;
-    }
-
+    /* O nama i autor */
     #aboutUsContent,
     #authorContent {
         margin-top: 2%;
@@ -166,6 +184,14 @@
         background-color: rgba(255, 165, 0, 0.75);
         scale: 1.05;
         transition: 0.3s ease-in;
+    }
+
+    #author {
+        background-color: rgb(225, 225, 225);
+    }
+
+    #authorContent .row .col-12:first-child {
+        background-image: url('../images/autor.jpeg');
     }
 
     /* jQuery plugin */
@@ -234,29 +260,8 @@
         padding: 2%;
     }
 
-    #author {
-        background-color: rgb(225, 225, 225);
-    }
-
-    #authorContent .row .col-12:first-child {
-        background-image: url('../images/autor.jpeg');
-    }
-
     footer {
         color: #fff;
-    }
-
-    .coral {
-        background-color: rgb(251, 181, 153);
-        color: #fff;
-    }
-
-    .coralLight {
-        background-color: rgb(251, 202, 182);
-    }
-
-    .errorText {
-        font-weight: lighter;
     }
 
     @media only screen and (max-width: 768px) {

@@ -33,10 +33,10 @@ window.onload = function () {
     }, 3500);
 }
 
+//Dinamicki ispis navigacije
 var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
 var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
 
-//Dinamicki ispis navigacije
 function menuWrite() {
     let ispis = "";
 
@@ -50,10 +50,9 @@ function menuWrite() {
     navigation.innerHTML = ispis;
 }
 
-
+//Dimanicko ispisivanje slika za galeriju
 var arrayImageTitle = ["Zlatibor", "Tara", "Stara Planina", "Šar Planina", "Golija", "Goč"];
 
-//Dimanicko ispisivanje slika za galeriju
 function galleryWrite() {
     let ispis = "";
     let arrayImages = ["landscape.jpg", "tara.jpg", "staraplanina.jpg", "sarplanina.jpg", "golija.jpg", "goc.jpg"];
@@ -277,7 +276,7 @@ function scrollNav() {
         header.style.transition = "0.3s";
     } else {
         header.classList.remove("fixed-top");
-        header.style.backgroundColor = "";
+        header.style.backgroundColor = "transparent";
         header.style.transtition = "0.3s";
     }
 }
