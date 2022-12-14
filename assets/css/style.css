@@ -275,3 +275,22 @@
             height: 400px;
         }
     }
+
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        right: 20px;
+        bottom: 20px;
+        background-color: rgb(2, 141, 255);
+        border-radius: 100%;
+        padding: 15px;
+        color: white;
+    }
+
+    #scrollToTop {
+        scale: 1.1;
+    }

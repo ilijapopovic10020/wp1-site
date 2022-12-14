@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function () {
     lc_lightbox('.elem', {
         wrap_class: 'lcl_fade_oc',
         gallery: true,
@@ -31,7 +31,25 @@ window.onload = function () {
         });
 
     }, 3500);
-}
+
+    $("#scrollToTop").hide();
+    $(window).scroll(function () {
+        let top = $(this)[0].scrollY;
+
+        if (top > 500) {
+            $("#scrollToTop").slideDown();
+        } else {
+            $("#scrollToTop").slideUp();
+
+        }
+    });
+
+    $("#scrollToTop").click(function(){
+        $("html").animate({
+            scrollTop: 0
+        }, 2000);
+    });
+});
 
 //Dinamicki ispis navigacije
 var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
@@ -165,7 +183,7 @@ function formWrite() {
 
     form.appendChild(div1);
     div1.appendChild(btn);
-    div1.appendChild(tagP);    
+    div1.appendChild(tagP);
 }
 
 function formValidation() {
