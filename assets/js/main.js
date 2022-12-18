@@ -44,7 +44,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#scrollToTop").click(function(){
+    $("#scrollToTop").click(function () {
         $("html").animate({
             scrollTop: 0
         }, 1500);
@@ -148,13 +148,13 @@ function formWrite() {
     ispis = "";
 
     var div = document.createElement("div");
-    var fnLbl = document.createElement("label");
+    var lbl = document.createElement("label");
 
     div.classList.add("col-md-6", "form-group");
-    fnLbl.setAttribute("for", "location");
-    fnLbl.classList.add("form-label", "ps-2");
-    var fnTn = document.createTextNode("Lokacija za odmor");
-    fnLbl.appendChild(fnTn);
+    lbl.setAttribute("for", "location");
+    lbl.classList.add("form-label", "ps-2");
+    var tn = document.createTextNode("Lokacija za odmor");
+    lbl.appendChild(tn);
 
     ispis += `<select id="location" name="location" class="form-select">
         <option value="0"> Izaberite...</option>`;
@@ -165,29 +165,45 @@ function formWrite() {
     ispis += `</select><p class="errorText"><p>`;
 
     form.appendChild(div);
-    div.appendChild(fnLbl);
+    div.appendChild(lbl);
     div.innerHTML += ispis;
 
     ispis = "";
 
     var div1 = document.createElement("div");
-    div1.classList.add("col-md-12", "form-group");
+    var lbl1 = document.createElement("label");
+    var inp = document.createElement("input");
+    var tn1 = document.createTextNode("Da li se slažete sa uslovima korišćenja?");
+
+    div1.classList.add("cl-md-12", "form-check");
+    lbl1.setAttribute("for", "accept");
+    lbl1.classList.add("form-check-label");
+    inp.setAttribute("type", "checkbox")
+    inp.setAttribute("id", "accept");
+    inp.setAttribute("name", "accept");
+    inp.classList.add("form-check-input");
+    lbl1.appendChild(tn1);
+
+    form.appendChild(div1);
+    div1.appendChild(inp);
+    div1.appendChild(lbl1);
+
+    var div2 = document.createElement("div");
+    div2.classList.add("col-md-12", "form-group");
     var btn = document.createElement("button");
     btn.setAttribute("type", "button");
     btn.setAttribute("id", "register");
     btn.classList.add("btn", "btn-primary");
     var btnTn = document.createTextNode("Potvrdi");
     btn.appendChild(btnTn);
-    var tagP = document.createElement("p");
-    tagP.className = "errorText";
 
-    form.appendChild(div1);
-    div1.appendChild(btn);
-    div1.appendChild(tagP);
+    form.appendChild(div2);
+    div2.appendChild(btn);
+
 }
 
 function formValidation() {
-    let objFirstName, objLastName, objEmail, objPhNumber, objPpl, objRoom, objDay, objLocation;
+    let objFirstName, objLastName, objEmail, objPhNumber, objPpl, objRoom, objDay, objLocation, objAccept;
     let error = false;
 
     objFirstName = document.querySelector("#firstName");
@@ -199,6 +215,7 @@ function formValidation() {
     objDay = document.querySelector("#day");
     objLocation = document.querySelector("#location");
     let location = objLocation.options[objLocation.selectedIndex].value;
+    objAccept = document.querySelector("#accept");
 
     let regImePrezime = /^[A-ZŠĐČĆŽ][a-zšđčćž]{2,14}(\s[A-ZŠĐČĆŽ][a-zšđčćž]{2,14})*$/;
     let regEmail = /^[a-z|A-Z][a-z|A-Z+.|0-9]{2,40}[a-z|A-Z|0-9][@]([a-z]{3,12}[.])*[a-z]{2,4}$/;
@@ -258,15 +275,16 @@ function formValidation() {
         objRoom.nextElementSibling.innerHTML = "";
     }
 
-    if (objPpl.value < objRoom.value) {
-        objRoom.classList.add("border", "border-3", "border-danger");
-        objRoom.nextElementSibling.innerHTML = `Maksimalan broj soba za ${objPpl.value} osoba/e je ${objPpl.value}`;
-        error = true;
-    } else {
-        objRoom.classList.remove("border-danger");
-        objRoom.nextElementSibling.innerHTML = "";
+    if (objRoom.value != "" || objPpl.value != "") {
+        if (objRoom.value > objPpl.value) {
+            objRoom.classList.add("border", "border-3", "border-danger");
+            objRoom.nextElementSibling.innerHTML = `Maksimalan broj soba za ${objPpl.value} osoba/e je ${objPpl.value}`;
+            error = true;
+        } else {
+            objRoom.classList.remove("border-danger");
+            objRoom.nextElementSibling.innerHTML = "";
+        }
     }
-
     if (!objDay.value) {
         objDay.classList.add("border", "border-3", "border-danger");
         objDay.nextElementSibling.innerHTML = "Polje broj dana je obavezno!";
@@ -283,6 +301,12 @@ function formValidation() {
     } else {
         objLocation.classList.remove("border-danger");
         objLocation.nextElementSibling.innerHTML = "";
+    }
+
+    if (!objAccept.checked) {
+        objAccept.classList.add("border", "border-3", "border-danger");
+    } else {
+        objAccept.classList.remove("border-danger");
     }
 
     if (!error) {

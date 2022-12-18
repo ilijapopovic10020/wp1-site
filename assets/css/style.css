@@ -30,6 +30,10 @@
         font-weight: lighter;
     }
 
+    .successText {
+        font-weight: lighter;
+    }
+
     /* Slajder */
     #slider {
         position: absolute;
@@ -289,8 +293,9 @@
         border-radius: 100%;
         padding: 15px;
         color: white;
+        transition: 0.3s ease;
     }
 
-    #scrollToTop {
+    #scrollToTop:hover {
         scale: 1.1;
     }
