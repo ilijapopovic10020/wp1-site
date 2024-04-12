@@ -10,6 +10,7 @@ $(document).ready(function () {
         border_w: 0,
     });
     galleryWrite();
+    menuWrite();
     scrollNav();
     formWrite();
 
