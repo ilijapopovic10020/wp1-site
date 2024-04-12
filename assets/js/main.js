@@ -10,8 +10,6 @@ $(document).ready(function () {
         border_w: 0,
     });
     galleryWrite();
-    menuWrite();
-    authorLangsWrite();
     scrollNav();
     formWrite();
 
@@ -52,8 +50,8 @@ $(document).ready(function () {
 });
 
 //Dinamicki ispis navigacije
-var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija", "Autor"];
-var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact", "#author"];
+var arrayLinkNames = ["Početna", "O Nama", "Destinacije", "Rezervacija"];
+var arrayLinks = ["index.html", "#aboutUs", "#destination", "#contact"];
 
 function menuWrite() {
     let ispis = "";
@@ -95,19 +93,6 @@ function galleryWrite() {
     }
 
     destination.innerHTML = ispis;
-}
-
-//Dinamicki ispis za autora
-function authorLangsWrite() {
-    let ispis = "";
-    var arrayLangs = ["C#", "C/C++", "HTML", "CSS", "JavaScript", "Java"];
-    var langs = document.querySelector("#lang");
-
-    for (let i = 0; i < arrayLangs.length; i++) {
-        ispis += `<li>${arrayLangs[i]}</li>`
-    }
-
-    langs.innerHTML = ispis;
 }
 
 //Dinamicki ispis forme
